@@ -18,13 +18,16 @@ class UrlController extends Controller
 
     public function store(Request $request)
     {
+        if ($request->longUrl === null) {
+            return;
+        }
+
         $url = new Url;
         $url->longUrl = $request->longUrl;
-        if (Url::find($url->longUrl) !== null) {
-            return response()->conflict(409);
-        };
-        $url->shortUrl = bin2hex(random_bytes(4));
+        $url->shortUrl = Url::find($url->longUrl) === null
+            ? bin2hex(random_bytes(4))
+            : Url::where('longUrl', $url->longUrl);
         $url->save();
-        return inertia($status = 201);
+        return response()->noContent()->header('Access-Control-Allow-Origin', 'http://127.0.0.1:8000');
     }
 }
