@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('url', function (Blueprint $table) {
-            $table->id();
-            $table->longurl();
-            $table->shorturl();
+            $table->id()->primary();
+            $table->string('longurl');
+            $table->string('shorturl');
             $table->timestamps();
         });
     }
