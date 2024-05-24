@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Url;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Inertia\Inertia;
 
 class UrlController extends Controller
 {
@@ -24,10 +24,11 @@ class UrlController extends Controller
 
         $url = new Url;
         $url->longUrl = $request->longUrl;
-        $url->shortUrl = Url::find($url->longUrl) === null
-            ? bin2hex(random_bytes(4))
-            : Url::where('longUrl', $url->longUrl);
-        $url->save();
-        return response()->noContent()->header('Access-Control-Allow-Origin', 'http://127.0.0.1:8000');
+        $existingUrl = Url::where('longUrl', $request->longUrl)->first();
+        $url->shortUrl = $existingUrl ? false : bin2hex(random_bytes(4));
+        if ($url->shortUrl !== false) {
+            $url->save();
+        }
+        return Inertia::share('newUrl', $url);
     }
 }
