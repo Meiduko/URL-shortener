@@ -1,24 +1,15 @@
 import { UrlResponse } from "@/types";
-import { router } from "@inertiajs/react";
-import { useEffect, useState } from "react";
 
-export default function YourLinks() {
-    const [urls, setUrls] = useState<UrlResponse[]>();
+interface Props {
+    urls: UrlResponse[];
+}
 
-    useEffect(() => {
-        router.get("http://localhost:8000/urls");
-
-        fetch("http://localhost:8000/urls")
-            .then((res) => res.json())
-
-            .then((data) => setUrls(data));
-    }, []);
-
+export default function YourLinks({ urls }: Props) {
     return (
         <>
             <h2 className="text-2xl">Tus enlaces</h2>
             {urls?.length ? (
-                <table className="w-full table-auto border-collapse  border border-indigo-800">
+                <table className="w-full  table-auto border-collapse  border border-indigo-800">
                     <thead>
                         <tr>
                             <th className="border border-indigo-800">

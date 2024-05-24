@@ -8,6 +8,7 @@ export interface User {
 export interface UrlResponse {
     longUrl: string;
     shortUrl: string;
+    newUrl?: UrlResponse;
 }
 
 export type PageProps<
