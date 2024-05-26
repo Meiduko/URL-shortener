@@ -10,14 +10,12 @@
 - Bundler: Vite
 
 > Requisitos previos:
-
 - PHP >= 8.2
 - Composer
 - Node.js >= 14.x
 - npm o yarn
 
 > Instalación:
-
 #### Clonar el repositorio:
 
 - `git clone https://github.com/meiduko/url-shortener.git`
@@ -48,7 +46,6 @@
   El servidor estará disponible en **localhost:8000**
 
 > Estructura del proyecto
-
 #### Backend (Laravel):
 
 - `/app/`: Modelos y controladores

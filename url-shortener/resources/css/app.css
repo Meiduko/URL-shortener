@@ -6,6 +6,7 @@
   color-scheme: light dark;
 }
 
+[data-theme='dark'] {
 @media (prefers-color-scheme: dark) {
   body {
     background: radial-gradient(ellipse at top, #1c274c, #0f172a),
@@ -15,6 +16,9 @@
 }
 
 
+[data-theme='light'] {
+  body {
+    background-color: white;
 @media (prefers-color-scheme: light) {
   body {
     background-image: url(/public/BackgroundNoise.svg);
@@ -24,7 +28,6 @@
 
 body {
   background-attachment: fixed;
-
   font-family:
     system-ui;
 }
