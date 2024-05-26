@@ -9,7 +9,6 @@ import { UrlResponse } from "@/types"
 import { router } from "@inertiajs/react"
 import { FormEvent, useEffect, useState } from "react"
 
-
 export default function Home () {
   const [urls, setUrls] = useState<UrlResponse[]>([])
 
@@ -50,5 +49,5 @@ export default function Home () {
       <Footer />
     </div>
   )
-}
+
 }
