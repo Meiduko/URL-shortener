@@ -3,6 +3,7 @@
 ### Es mi primera app y me hace mucha ilusión presentar un simple acortador de URLs perfectamente funcional
 
 > Esta app utiliza:
+
 - Backend: Laravel
 - Frontend: React
 - CSS: Tailwind CSS

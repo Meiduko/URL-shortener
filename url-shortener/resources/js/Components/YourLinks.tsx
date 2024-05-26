@@ -3,7 +3,6 @@ import { UrlResponse } from "@/types"
 interface Props {
   urls: UrlResponse[]
 }
-
 export default function YourLinks ({ urls }: Props) {
   return (
     <>
