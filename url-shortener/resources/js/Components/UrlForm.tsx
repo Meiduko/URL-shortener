@@ -31,7 +31,7 @@ export default function UrlForm({ handleSubmit }: Props) {
                     placeholder="https://google.com"
                     value={longUrl}
                 />
-                <button className="w-2/12 rounded-r-lg bg-indigo-900/50">
+                <button className="w-2/12 rounded-r-lg bg-black/70 text-white dark:text-black dark:bg-indigo-900/50">
                     Acortar
                 </button>
             </div>

@@ -33,14 +33,14 @@ export default function Home() {
             <Navbar />
             <main className="mt-36 flex w-2/3 flex-col justify-center gap-10 sm:mt-24 xl:mt-0">
                 <section className=" flex flex-col justify-evenly gap-10 sm:mt-0 xl:flex-row">
-                    <article className="border-outline h-fit rounded-lg border p-4 text-center xl:w-full">
+                    <article className=" dark:bg-transparent bg-black/40 dark:border-outline h-fit rounded-lg border p-4 text-center xl:w-full">
                         <UrlForm handleSubmit={handleSubmit} />
                     </article>
-                    <article className="border-outline min-h-64 overflow-auto rounded-lg border p-4 text-center  scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-800 scrollbar-thumb-rounded-full xl:w-full">
+                    <article className="dark:border-outline min-h-64 overflow-auto rounded-lg border p-4 text-center dark:bg-transparent bg-black/40  scrollbar scrollbar-track-transparent dark:scrollbar-thumb-indigo-800 scrollbar-thumb-black/70 scrollbar-thumb-rounded-full xl:w-full">
                         <YourLinks urls={urls} />
                     </article>
                 </section>
-                <section className="border-outline w- flex h-fit min-h-64  self-center overflow-x-auto rounded-lg border p-4 text-center xl:w-1/3">
+                <section className="dark:border-outline flex h-fit min-h-64 self-center overflow-x-auto flex-col dark:bg-transparent bg-black/40 justify-evenly rounded-lg border p-4 text-center xl:w-1/3">
                     <Contact />
                 </section>
             </main>

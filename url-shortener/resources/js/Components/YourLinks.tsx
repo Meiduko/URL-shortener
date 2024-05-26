@@ -9,13 +9,13 @@ export default function YourLinks({ urls }: Props) {
         <>
             <h2 className="text-2xl">Tus enlaces</h2>
             {urls?.length ? (
-                <table className="w-full  table-auto border-collapse  border border-indigo-800">
+                <table className="w-full  table-auto border-collapse  border border-black/70 dark:border-indigo-800">
                     <thead>
                         <tr>
-                            <th className="border border-indigo-800">
+                            <th className="border border-black/70 dark:border-indigo-800">
                                 Long URL
                             </th>
-                            <th className="border border-indigo-800">
+                            <th className="border border-black/70 dark:border-indigo-800">
                                 Short URL
                             </th>
                         </tr>
@@ -26,13 +26,13 @@ export default function YourLinks({ urls }: Props) {
                             return (
                                 <tr
                                     key={shortUrl}
-                                    className="border-collapse border border-indigo-800"
+                                    className="border-collapse border border-black/70 dark:border-indigo-800"
                                 >
-                                    <td className="border-collapse border border-indigo-800">
+                                    <td className="border-collapse border border-black/70 dark:border-indigo-800">
                                         {" "}
                                         {longUrl}
                                     </td>
-                                    <td className="border-collapse border border-indigo-800">
+                                    <td className="border-collapse border border-black/70 dark:border-indigo-800">
                                         <a
                                             href={`http://localhost:8000/${shortUrl}`}
                                         >
