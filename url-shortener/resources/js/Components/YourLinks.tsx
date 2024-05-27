@@ -1,5 +1,4 @@
 import { UrlResponse } from "@/types"
-import { env } from "process"
 
 
 interface Props {
@@ -8,7 +7,6 @@ interface Props {
 
 export default function YourLinks ({ urls }: Props) {
   const apiUrl = import.meta.env.VITE_APP_URL
-  console.log(apiUrl)
 
   return (
     <>
@@ -37,7 +35,7 @@ export default function YourLinks ({ urls }: Props) {
                     {" "}
                     {longUrl}
                   </td>
-                  <td className="border-collapse border border-black/70 hover:text-yellow-400 dark:border-indigo-800">
+                  <td className="border-collapse px-2 border border-black/70 hover:underline hover:text-yellow-400 dark:border-indigo-800">
                     <a
                       href={`http://localhost:8000/${shortUrl}`}
                     > {apiUrl + shortUrl}
