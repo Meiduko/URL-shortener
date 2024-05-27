@@ -4,25 +4,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
 
+  <meta name="description" content="App to manage and store urls">
   <title inertia>{{ config("app.name", "Laravel") }}</title>
+  {{-- Favicon --}}
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset("favicon.png") }}">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Scripts -->
+  @routes
+  @viteReactRefresh
+  @vite(["resources/js/app.tsx", "resources/js/Pages/{$page["component"]}.tsx"])
+  @inertiaHead
+</head>
 
-    <meta name="description" content="App to manage and store urls">
-    <title inertia>{{ config("app.name", "Laravel") }}</title>
-    {{-- Favicon --}}
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset("favicon.png") }}">
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+<body class="font-sans antialiased">
+  @inertia
+</body>
 
-    <!-- Scripts -->
-    @routes
-    @viteReactRefresh
-    @vite(["resources/js/app.tsx", "resources/js/Pages/{$page["component"]}.tsx"])
-    @inertiaHead
-  </head>
+</html>
